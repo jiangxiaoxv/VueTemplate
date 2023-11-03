@@ -5,7 +5,6 @@ import { createHtmlPlugin } from 'vite-plugin-html'
 import autoprefixer from 'autoprefixer'
 import tailwindcss from 'tailwindcss'
 import atImport from 'postcss-import'
-import vueJsx from '@vitejs/plugin-vue-jsx'
 
 /* import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
@@ -17,7 +16,6 @@ export default (command, mode) => {
   return defineConfig({
     plugins: [
       vue(),
-      vueJsx(),
       /* //element+自动按需导入
       AutoImport({
         resolvers: [ElementPlusResolver()]
