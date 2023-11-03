@@ -5,10 +5,9 @@ import { createHtmlPlugin } from 'vite-plugin-html'
 import autoprefixer from 'autoprefixer'
 import tailwindcss from 'tailwindcss'
 import atImport from 'postcss-import'
-
-/* import AutoImport from 'unplugin-auto-import/vite'
+import AutoImport from 'unplugin-auto-import/vite'
 import Components from 'unplugin-vue-components/vite'
-import { ElementPlusResolver } from 'unplugin-vue-components/resolvers' */
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 export default (command, mode) => {
   const envDir = path.resolve(__dirname, './env')
@@ -16,13 +15,13 @@ export default (command, mode) => {
   return defineConfig({
     plugins: [
       vue(),
-      /* //element+自动按需导入
+      //element+自动按需导入
       AutoImport({
         resolvers: [ElementPlusResolver()]
       }),
       Components({
         resolvers: [ElementPlusResolver()]
-      }), */
+      }),
       createHtmlPlugin({
         minify: true,
         template: '/index.html',
