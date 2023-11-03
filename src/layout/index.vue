@@ -1,21 +1,22 @@
 <template>
-  <slot name="default">
-    <div class="layout-wrap">
-      <router-view v-slot="{ Component }">
-        <transition>
-          <!-- <keep-alive> -->
-          <component :is="Component" />
-          <!-- </keep-alive> -->
-        </transition>
-      </router-view>
-    </div>
-  </slot>
+  <div class="layout-wrap">
+    <Header />
+    <slot name="default"> </slot>
+  </div>
 </template>
 
 <script setup>
-import { onMounted } from 'vue'
+import { onMounted, computed } from 'vue'
+import { useRoute } from 'vue-router'
+import Header from './header.vue'
 
-onMounted(() => {})
+const route = useRoute()
+const noNeedLayout = computed(() => {
+  return route.meta?.noNeedLayout || false
+})
+onMounted(() => {
+  console.log(noNeedLayout.value)
+})
 </script>
 
 <style lang="less">

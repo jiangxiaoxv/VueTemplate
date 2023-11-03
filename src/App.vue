@@ -1,7 +1,11 @@
 <template>
-  <Layout></Layout>
+  <router-view v-slot="{ Component }">
+    <transition>
+      <!-- <keep-alive> -->
+      <component :is="Component" />
+      <!-- </keep-alive> -->
+    </transition>
+  </router-view>
 </template>
 
-<script setup>
-import Layout from './layout/index.vue'
-</script>
+<script setup></script>

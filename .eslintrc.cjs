@@ -10,12 +10,7 @@ module.exports = {
   },
 
   root: true, // 告诉eslint只要检查到该配置文件所在的目录的所有文件即可，没必要去检查用户根目录
-  extends: [
-    'plugin:vue/vue3-recommended',
-    'eslint:recommended'
-    // 'plugin:prettier/recommended',
-  ], // standard规范也会对env做一些兼容['eslint:all', 'eslint:recommended', 'standard']
-  // extends: ['plugin:vue/essential', 'standard'], // standard规范也会对env做一些兼容['eslint:all', 'eslint:recommended', 'standard']
+  extends: ['plugin:vue/vue3-recommended', 'eslint:recommended'],
   parser: 'vue-eslint-parser',
   parserOptions: {
     // ecmaVersion: 6, // ecma版本，使用es版本检查代码

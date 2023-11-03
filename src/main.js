@@ -14,6 +14,7 @@ const app = createApp(App)
 
 app.use(createPinia())
 app.use(router)
+
 // 按需引入element-plus 使用的组件
 setupElementPlus(app)
 

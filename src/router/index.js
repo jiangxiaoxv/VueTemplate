@@ -1,16 +1,35 @@
 import * as VueRouter from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import HomeView from '../views/home/index.vue'
 
 const routes = [
   {
     path: '/',
+    meta: { title: '根路径' },
+    redirect: '/login'
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('../views/login/index.vue'),
+    meta: {}
+  },
+  {
+    path: '/home',
     name: 'home',
-    component: HomeView
+    component: HomeView,
+    redirect: '/home/welcome',
+    children: [
+      {
+        path: 'welcome',
+        name: 'welcome',
+        component: () => import('../views/home/welcome/index.vue')
+      }
+    ]
   },
   {
     path: '/about',
     name: 'about',
-    component: () => import('../views/AboutView.vue')
+    component: () => import('../views/about/index.vue')
   }
 ]
 
